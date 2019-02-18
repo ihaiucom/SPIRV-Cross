@@ -50,13 +50,13 @@ CompilerMSL::CompilerMSL(ParsedIR &&ir_)
 {
 }
 
-void CompilerMSL::set_msl_vertex_attributes(const MSLVertexAttr *p_vtx_attrs, size_t vtx_attrs_count)
+void CompilerMSL::add_msl_vertex_attributes(const MSLVertexAttr *p_vtx_attrs, size_t vtx_attrs_count)
 {
 	for (size_t i = 0; i < vtx_attrs_count; i++)
 		vtx_attrs_by_location[p_vtx_attrs[i].location] = p_vtx_attrs[i];
 }
 
-void CompilerMSL::set_msl_resource_bindings(const MSLResourceBinding *p_res_bindings,
+void CompilerMSL::add_msl_resource_bindings(const MSLResourceBinding *p_res_bindings,
                                             size_t res_bindings_count)
 {
 	for (size_t i = 0; i < res_bindings_count; i++)
